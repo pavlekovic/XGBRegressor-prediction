@@ -30,22 +30,7 @@ display(dfR1_o.limit(10))
 ```
 
 
-<style scoped>
-  .table-result-container {
-    max-height: 300px;
-    overflow: auto;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 5px;
-  }
-  th {
-    text-align: left;
-  }
-</style><div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Number</th><th>Order Date</th><th>Item Name</th><th>Quantity</th><th>Product Price</th><th>Total products</th></tr></thead><tbody><tr><td>16118</td><td>03/08/2019 20:25</td><td>Plain Papadum</td><td>2</td><td>0.8</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>King Prawn Balti</td><td>1</td><td>12.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Garlic Naan</td><td>1</td><td>2.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Paneer Tikka Masala</td><td>1</td><td>8.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Mango Chutney</td><td>1</td><td>0.5</td><td>6</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Plain Naan</td><td>1</td><td>2.6</td><td>7</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>7</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Tandoori Chicken (1/4)</td><td>1</td><td>4.95</td><td>7</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Vindaloo - Lamb</td><td>1</td><td>7.95</td><td>7</td></tr></tbody></table></div>
+<div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Number</th><th>Order Date</th><th>Item Name</th><th>Quantity</th><th>Product Price</th><th>Total products</th></tr></thead><tbody><tr><td>16118</td><td>03/08/2019 20:25</td><td>Plain Papadum</td><td>2</td><td>0.8</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>King Prawn Balti</td><td>1</td><td>12.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Garlic Naan</td><td>1</td><td>2.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Paneer Tikka Masala</td><td>1</td><td>8.95</td><td>6</td></tr><tr><td>16118</td><td>03/08/2019 20:25</td><td>Mango Chutney</td><td>1</td><td>0.5</td><td>6</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Plain Naan</td><td>1</td><td>2.6</td><td>7</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>7</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Tandoori Chicken (1/4)</td><td>1</td><td>4.95</td><td>7</td></tr><tr><td>16117</td><td>03/08/2019 20:17</td><td>Vindaloo - Lamb</td><td>1</td><td>7.95</td><td>7</td></tr></tbody></table></div>
 
 
 
@@ -55,22 +40,7 @@ display(dfR1_o.groupBy("Item Name").sum().orderBy("sum(Total Products)",ascendin
 ```
 
 
-<style scoped>
-  .table-result-container {
-    max-height: 300px;
-    overflow: auto;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 5px;
-  }
-  th {
-    text-align: left;
-  }
-</style><div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Item Name</th><th>sum(Order Number)</th><th>sum(Quantity)</th><th>sum(Product Price)</th><th>sum(Total products)</th></tr></thead><tbody><tr><td>Pilau Rice</td><td>43450300</td><td>6367</td><td>13926.95000000106</td><td>31314</td></tr><tr><td>Plain Papadum</td><td>33504914</td><td>10648</td><td>2878.4000000001065</td><td>27140</td></tr><tr><td>Plain Naan</td><td>33978950</td><td>4983</td><td>9757.80000000069</td><td>24276</td></tr><tr><td>Onion Bhajee</td><td>21818221</td><td>2749</td><td>9487.899999999972</td><td>17293</td></tr><tr><td>Garlic Naan</td><td>23930176</td><td>3318</td><td>7752.599999999671</td><td>17143</td></tr><tr><td>Mango Chutney</td><td>19194045</td><td>2504</td><td>1035.0</td><td>16991</td></tr><tr><td>Plain Rice</td><td>21315452</td><td>2964</td><td>6988.549999999718</td><td>15345</td></tr><tr><td>Chicken Tikka Masala</td><td>19303060</td><td>2473</td><td>19090.350000000766</td><td>14439</td></tr><tr><td>Mint Sauce</td><td>13604320</td><td>1840</td><td>731.5</td><td>12615</td></tr><tr><td>Bombay Aloo</td><td>16083952</td><td>1831</td><td>10424.400000000096</td><td>12373</td></tr></tbody></table></div>
+<div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Item Name</th><th>sum(Order Number)</th><th>sum(Quantity)</th><th>sum(Product Price)</th><th>sum(Total products)</th></tr></thead><tbody><tr><td>Pilau Rice</td><td>43450300</td><td>6367</td><td>13926.95000000106</td><td>31314</td></tr><tr><td>Plain Papadum</td><td>33504914</td><td>10648</td><td>2878.4000000001065</td><td>27140</td></tr><tr><td>Plain Naan</td><td>33978950</td><td>4983</td><td>9757.80000000069</td><td>24276</td></tr><tr><td>Onion Bhajee</td><td>21818221</td><td>2749</td><td>9487.899999999972</td><td>17293</td></tr><tr><td>Garlic Naan</td><td>23930176</td><td>3318</td><td>7752.599999999671</td><td>17143</td></tr><tr><td>Mango Chutney</td><td>19194045</td><td>2504</td><td>1035.0</td><td>16991</td></tr><tr><td>Plain Rice</td><td>21315452</td><td>2964</td><td>6988.549999999718</td><td>15345</td></tr><tr><td>Chicken Tikka Masala</td><td>19303060</td><td>2473</td><td>19090.350000000766</td><td>14439</td></tr><tr><td>Mint Sauce</td><td>13604320</td><td>1840</td><td>731.5</td><td>12615</td></tr><tr><td>Bombay Aloo</td><td>16083952</td><td>1831</td><td>10424.400000000096</td><td>12373</td></tr></tbody></table></div>
 
 
 ## Data cleaning
@@ -96,22 +66,7 @@ display(nulls_df)
 ```
 
 
-<style scoped>
-  .table-result-container {
-    max-height: 300px;
-    overflow: auto;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 5px;
-  }
-  th {
-    text-align: left;
-  }
-</style><div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Number</th><th>Order Date</th><th>Item Name</th><th>Quantity</th><th>Product Price</th><th>Total products</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div>
+<div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Number</th><th>Order Date</th><th>Item Name</th><th>Quantity</th><th>Product Price</th><th>Total products</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div>
 
 
 ### Checking for duplicates
@@ -169,22 +124,7 @@ display(df.limit(10))
 ```
 
 
-<style scoped>
-  .table-result-container {
-    max-height: 300px;
-    overflow: auto;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 5px;
-  }
-  th {
-    text-align: left;
-  }
-</style><div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Number</th><th>Item Name</th><th>Quantity</th><th>Product Price</th><th>Total products</th><th>Timestamp</th><th>Order Date</th><th>Order Time</th><th>Value</th></tr></thead><tbody><tr><td>16118</td><td>Plain Papadum</td><td>2</td><td>0.8</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>4.8</td></tr><tr><td>16118</td><td>King Prawn Balti</td><td>1</td><td>12.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>77.7</td></tr><tr><td>16118</td><td>Garlic Naan</td><td>1</td><td>2.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>17.7</td></tr><tr><td>16118</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>23.7</td></tr><tr><td>16118</td><td>Paneer Tikka Masala</td><td>1</td><td>8.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>53.7</td></tr><tr><td>16118</td><td>Mango Chutney</td><td>1</td><td>0.5</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>3.0</td></tr><tr><td>16117</td><td>Plain Naan</td><td>1</td><td>2.6</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>18.2</td></tr><tr><td>16117</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>27.65</td></tr><tr><td>16117</td><td>Tandoori Chicken (1/4)</td><td>1</td><td>4.95</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>34.65</td></tr><tr><td>16117</td><td>Vindaloo - Lamb</td><td>1</td><td>7.95</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>55.65</td></tr></tbody></table></div>
+<div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Number</th><th>Item Name</th><th>Quantity</th><th>Product Price</th><th>Total products</th><th>Timestamp</th><th>Order Date</th><th>Order Time</th><th>Value</th></tr></thead><tbody><tr><td>16118</td><td>Plain Papadum</td><td>2</td><td>0.8</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>4.8</td></tr><tr><td>16118</td><td>King Prawn Balti</td><td>1</td><td>12.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>77.7</td></tr><tr><td>16118</td><td>Garlic Naan</td><td>1</td><td>2.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>17.7</td></tr><tr><td>16118</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>23.7</td></tr><tr><td>16118</td><td>Paneer Tikka Masala</td><td>1</td><td>8.95</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>53.7</td></tr><tr><td>16118</td><td>Mango Chutney</td><td>1</td><td>0.5</td><td>6</td><td>2019-08-03T20:25:00.000+0000</td><td>2019-08-03</td><td>20:25</td><td>3.0</td></tr><tr><td>16117</td><td>Plain Naan</td><td>1</td><td>2.6</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>18.2</td></tr><tr><td>16117</td><td>Mushroom Rice</td><td>1</td><td>3.95</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>27.65</td></tr><tr><td>16117</td><td>Tandoori Chicken (1/4)</td><td>1</td><td>4.95</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>34.65</td></tr><tr><td>16117</td><td>Vindaloo - Lamb</td><td>1</td><td>7.95</td><td>7</td><td>2019-08-03T20:17:00.000+0000</td><td>2019-08-03</td><td>20:17</td><td>55.65</td></tr></tbody></table></div>
 
 
 ### Figuring out the timeline
@@ -196,22 +136,7 @@ display(time_period.limit(10))
 ```
 
 
-<style scoped>
-  .table-result-container {
-    max-height: 300px;
-    overflow: auto;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 5px;
-  }
-  th {
-    text-align: left;
-  }
-</style><div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Date</th><th>count</th></tr></thead><tbody><tr><td>2015-09-01</td><td>1</td></tr><tr><td>2015-09-08</td><td>3</td></tr><tr><td>2015-09-09</td><td>6</td></tr><tr><td>2015-09-29</td><td>6</td></tr><tr><td>2015-09-30</td><td>13</td></tr><tr><td>2015-10-01</td><td>20</td></tr><tr><td>2015-10-02</td><td>19</td></tr><tr><td>2016-03-07</td><td>17</td></tr><tr><td>2016-03-08</td><td>8</td></tr><tr><td>2016-03-09</td><td>7</td></tr></tbody></table></div>
+<div class='table-result-container'><table class='table-result'><thead style='background-color: white'><tr><th>Order Date</th><th>count</th></tr></thead><tbody><tr><td>2015-09-01</td><td>1</td></tr><tr><td>2015-09-08</td><td>3</td></tr><tr><td>2015-09-09</td><td>6</td></tr><tr><td>2015-09-29</td><td>6</td></tr><tr><td>2015-09-30</td><td>13</td></tr><tr><td>2015-10-01</td><td>20</td></tr><tr><td>2015-10-02</td><td>19</td></tr><tr><td>2016-03-07</td><td>17</td></tr><tr><td>2016-03-08</td><td>8</td></tr><tr><td>2016-03-09</td><td>7</td></tr></tbody></table></div>
 
 
 
