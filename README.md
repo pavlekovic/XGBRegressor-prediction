@@ -1,12 +1,12 @@
 # XGBRegressor Prediction
 
-```
+```python
 # Install regression algorithm
 #%pip install xgboost
 ```
 
 
-```
+```python
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -16,7 +16,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_log_error, r2_scor
 ```
 
 
-```
+```python
 # Load data into dataframes
 dfR1_o = sqlContext.read.load('/FileStore/tables/restaurant_1_orders.csv', format='csv', header=True, inferSchema=True)
 ```
@@ -24,7 +24,7 @@ dfR1_o = sqlContext.read.load('/FileStore/tables/restaurant_1_orders.csv', forma
 ## Data exploration
 
 
-```
+```python
 # First glance over data using display() function
 display(dfR1_o.limit(10))
 ```
