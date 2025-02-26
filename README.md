@@ -34,7 +34,7 @@ display(dfR1_o.limit(10))
 
 
 
-```
+```python
 # Grouping by Item Name
 display(dfR1_o.groupBy("Item Name").sum().orderBy("sum(Total Products)",ascending=0).limit(10))
 ```
@@ -49,7 +49,7 @@ display(dfR1_o.groupBy("Item Name").sum().orderBy("sum(Total Products)",ascendin
 
 
 
-```
+```python
 # Create an empty list to store info about null values
 nulls = []
 
@@ -72,7 +72,7 @@ display(nulls_df)
 ### Checking for duplicates
 
 
-```
+```python
 # To check for duplicates, create a new DF without duplicates, then count rows in both new and old DF and compare
 unique_df1 = dfR1_o.dropDuplicates()
 total_count = dfR1_o.count()
@@ -85,7 +85,7 @@ print(f"Number of duplicate rows: {duplicate_count}")
 
 
 
-```
+```python
 # Easiest way to see data types
 dfR1_o.printSchema()
 ```
@@ -105,7 +105,7 @@ dfR1_o.printSchema()
 We can see that Order Date is a string, which won't work. So format to datetime instead.
 
 
-```
+```python
 # Convert the string column "date_str" into a timestamp column "datetime"
 df = dfR1_o.withColumn("Timestamp", to_timestamp(col("Order Date"), "dd/MM/yyyy HH:mm"))
 
@@ -130,7 +130,7 @@ display(df.limit(10))
 ### Figuring out the timeline
 
 
-```
+```python
 time_period = df.groupBy("Order Date").count().orderBy("Order Date", ascending=1)
 display(time_period.limit(10))
 ```
@@ -140,7 +140,7 @@ display(time_period.limit(10))
 
 
 
-```
+```python
 min_df = df.select(date_format(min(col("Order Date")), "yyyy-MM-dd").alias("min_date"))
 max_df = df.select(date_format(max(col("Order Date")), "yyyy-MM-dd").alias("max_date"))
 
@@ -149,7 +149,7 @@ latest = max_df.collect()[0]['max_date']
 ```
 
 
-```
+```python
 # Convert the Spark DataFrame to a Pandas DataFrame
 df_pd = df.toPandas()
 
@@ -185,7 +185,7 @@ plt.show()
 The graphs shows that there are inconsistencies for the earliest dates, mostly in year 2015 and in the summer of 2016.
 
 
-```
+```python
 # Define your date boundaries (make sure they are in a comparable format)
 date1 = "2016-05-01"
 date2 = "2016-09-01"
@@ -220,8 +220,6 @@ plt.title("Number of orders per day", pad=20)
 plt.xlabel(None)
 plt.ylabel(None)
 plt.show()
-
-
 ```
 
 
@@ -231,7 +229,7 @@ plt.show()
 
 
 
-```
+```python
 # Define your date boundaries (make sure they are in a comparable format)
 start_date = "2016-08-01"
 
@@ -287,7 +285,7 @@ plt.show()
 ### Creating weakly averages
 
 
-```
+```python
 orders = df_F[["Order Date", "Quantity"]]
 orders = orders.groupby([pd.Grouper(key='Order Date', freq='W-MON')])['Quantity'].sum().reset_index().sort_values('Order Date')
 
@@ -319,7 +317,7 @@ orders.shape
     Out[25]: (143, 94)
 
 
-```
+```python
 # Splitting the data into train (75%) and test (25%) data
 # 75% of 143 is 107
 train = orders[:107].drop('Order Date', axis = 1)
@@ -333,7 +331,7 @@ ytest =test['Quantity']
 ### Building the model
 
 
-```
+```python
 # Initialize the model
 model = XGBRegressor(n_estimators=500, learning_rate=0.01)
 
@@ -348,7 +346,7 @@ ypred = model.predict(xtest)
 ```
 
 
-```
+```python
 #First we add the results to our original dataframe, after first aligning the indexes
 ypred = pd.Series(ypred)
 
@@ -364,7 +362,7 @@ new_df = eval_df.drop(eval_df.index[[0,1,2,3,4,5,6,7,8,9,10,11]])
 ```
 
 
-```
+```python
 # Plotting the results of the train vs test sets
 # Create the plot, define size
 fig, ax = plt.subplots(figsize=(60, 30))
@@ -411,7 +409,7 @@ ax.yaxis.set_major_formatter(FuncFormatter(dollar_formatter))
 
 
 
-```
+```python
 # DISPLAY metrics - mean_absolute_error, r2_score, mean_squared_log_error
 print("Metrics for Total Sale\n")
 print("Mean Absolute Error:\n", mean_absolute_error(ytest, ypred))
